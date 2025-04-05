@@ -15,6 +15,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
   const { data, loading, error } = useQuery<UserData>(GET_USER, {
     variables: { login: userName },
   });
+  // console.log(error)
 
   if (loading) return <Loading />;
   if (error) return <h2 className='text-xl'>{error.message}</h2>;
